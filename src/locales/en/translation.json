@@ -1,0 +1,15 @@
+{
+  "headerTranslation": {
+    "slogan": "React App Boilerplate",
+    "description": "Typescript support"
+  },
+  "homeTranslation": {
+    "title": "welcome",
+    "description": "Create React App Template"
+  },
+  "i18nFeature": {
+    "title": "i18n Internationalization & Pluralization",
+    "selectLanguage": "Select Language",
+    "description": "Scalable apps need to support multiple languages, easily add and support multiple languages. Change the language below to see how instantly it updates the page without refreshing."
+  }
+}

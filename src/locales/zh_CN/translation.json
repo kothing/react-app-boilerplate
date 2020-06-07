@@ -1,0 +1,15 @@
+{
+  "headerTranslation": {
+    "slogan": "React 应用模板",
+    "description": "支持Typescript"
+  },
+  "homeTranslantion": {
+    "title": "欢迎",
+    "description": "Create React App 模板"
+  },
+  "i18nFeature": {
+    "title": "i18n 国际化与多元化",
+    "selectLanguage": "选择语言",
+    "description": "可扩展应用需要支持多种语言，易于添加和支持多种语言。更改下面的语言以查看它如何在不刷新的情况下立即更新页面。"
+  }
+}

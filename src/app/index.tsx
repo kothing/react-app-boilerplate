@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
+
+import { GlobalStyle } from '../styles/global-styles';
+import { NavBar } from 'app/components/NavBar';
+import { Footer } from 'app/components/Footer';
+import { HomePage } from './containers/HomePage/Loadable';
+import { NotFoundPage } from './containers/NotFoundPage/Loadable';
+/* -------------------------------------------------------------------------- */
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <Helmet titleTemplate="%s - React Boilerplate" defaultTitle="React Boilerplate">
+        <meta name="description" content="A React Boilerplate application" />
+      </Helmet>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+      <GlobalStyle />
+      <Footer />
+    </BrowserRouter>
+  );
+}
