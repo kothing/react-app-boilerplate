@@ -11,7 +11,7 @@
 
 > Template for advanced react applications.
 
-### 🏠 [Homepage](https://github.com/kothing/react-app-boilerplate)
+### 🏠 [Source](https://github.com/kothing/react-app-boilerplate)
 
 ### 🏠 [Demo](https://react-app-boilerplate.now.sh/)
 
