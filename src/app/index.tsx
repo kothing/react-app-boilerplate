@@ -5,8 +5,8 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from '../styles/global-styles';
 import { NavBar } from 'app/components/NavBar';
 import { Footer } from 'app/components/Footer';
-import { HomePage } from './containers/HomePage/Loadable';
-import { NotFoundPage } from './containers/NotFoundPage/Loadable';
+import { HomePage } from './pages/HomePage/Loadable';
+import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 /* -------------------------------------------------------------------------- */
 
 export function App() {
