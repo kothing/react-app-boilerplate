@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   ${FormLabel} {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0;
   }
 `;
 const Languages = styled.div`

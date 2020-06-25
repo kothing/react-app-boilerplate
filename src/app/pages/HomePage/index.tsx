@@ -1,10 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-
+import styled from 'styled-components/macro';
 import { PageWrapper } from 'app/components/PageWrapper';
 
 import Captcha from 'app/components/Captcha';
-import Captcha2 from 'app/components/Captcha2';
+
+const Wrapper = styled.main`
+  height: auto;
+  padding: 0 0 5rem;
+`;
 
 /* -------------------------------------------------------------------------- */
 
@@ -20,10 +24,11 @@ export function HomePage() {
       </Helmet>
 
       <PageWrapper>
-        <p>HomePage container</p>
-        <br />
-        <Captcha onChange={onChange} placeholder="Enter captcha" />
-        <Captcha2 />
+        <Wrapper>
+          <p>HomePage container</p>
+          <br />
+          <Captcha onChange={onChange} placeholder="Enter captcha" />
+        </Wrapper>
       </PageWrapper>
     </>
   );

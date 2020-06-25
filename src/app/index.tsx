@@ -9,7 +9,7 @@ import { HomePage } from './pages/HomePage/Loadable';
 import { NotFoundPage } from './pages/NotFoundPage/Loadable';
 /* -------------------------------------------------------------------------- */
 
-export function App(): JSX.Element {
+const App = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Helmet titleTemplate="%s - React Boilerplate" defaultTitle="React Boilerplate">
@@ -24,4 +24,6 @@ export function App(): JSX.Element {
       <Footer />
     </BrowserRouter>
   );
-}
+};
+
+export default App;
