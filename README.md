@@ -1,44 +1,136 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Welcome to React App Boilerplate 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/kothing/react-app-boilerplate/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="http://commitizen.github.io/cz-cli/" target="_blank">
+    <img alt="Commitizen friendly" src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg">
+  </a>
+</p>
 
-## Available Scripts
+> Template for advanced react applications.
 
-In the project directory, you can run:
+### 🏠 [Source](https://github.com/kothing/react-app-boilerplate)
 
-### `yarn start`
+### 🏠 [Demo](https://react-app-boilerplate.now.sh/)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Goal
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+I am a professional Frontend Developer based in Germany. My goal with this project is to create an advanced template for
+react applications. On the way I hope to learn as much as I can about **react** and the **typescript**/**javascript**
+ecosystem.
 
-### `yarn test`
+## Usage Guide
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Install
 
-### `yarn build`
+```sh
+npm install
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Usage
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```sh
+npm run start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Run tests
 
-### `yarn eject`
+```sh
+npm run test
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Cut a new release
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+npm run release
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Git Workflow
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Development
 
-## Learn More
+    develop
+    o
+    |           feature/cool-name
+    o---------->o
+    |           |
+    o           o
+    |           |
+    o<---[PR]---o
+    .
+    .
+    .           bugfix/severe-bug-name
+    o---------->o
+    |           |
+    o           o
+    |           |
+    o<---[PR]---o
+    .
+    .
+    .
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Releases
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+We use "Semantic Versioning" `major.minor.patch` for releases: https://semver.org/
+
+`master` branch should always be stable and deployable.
+
+`release` branches are for new major/minor versions (patch=0), e. g. `1.1.0`, `1.2.0`, `2.0.0`
+
+`hotifx` branches are for new patch versions, e. g. `1.2.1`, `1.2.2`, `1.2.3`
+
+(`release` branches may be skipped for small teams -> use `master` instead)
+
+    develop                         master
+    o                               .
+    |           release/1.0.0       .
+    o---------->o                   .               // prepare release, e. g. bump version in code
+    .           |                   .
+    .           o                   .
+    .           |                   .
+    o<---[PR]---o-------[PR]------->o tag=v1.0.0
+    .                               |
+    .                               |
+    .           hotfix/name         |
+    .           o<------------------+
+    .           |                   |
+    .           o                   |               // prepare release, e. g. bump version in code
+    .           |                   |
+    o<---[PR]---o-------[PR]------->o tag=v1.0.1
+    .
+    .
+    .
+
+### Bumping Version
+
+Use the `npm run release` command for releasing.
+
+This command uses `standard-version` and determines based on the current version number and your commit history which
+version is appropriate for the next release.
+
+## Author
+
+👤 **kothing**
+
+- Github: [@kothing](https://github.com/kothing)
+
+## 🤝 Contributing
+
+Take a look at the [contributing guide](https://github.com/kothing/react-app-boilerplate/blob/master/CONTRIBUTING.md).
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+## Changelog
+
+Take a look at the [changelog](https://github.com/kothing/react-app-boilerplate/blob/master/CHANGELOG.md). This project
+uses [commitizen](http://commitizen.github.io/cz-cli/), see
+[standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 📝 License
+
+Copyright &copy; 2020 [kothing](https://github.com/kothing).<br /> This project is
+[MIT](https://github.com/kothing/react-app-boilerplate/blob/master/LICENSE) licensed.
