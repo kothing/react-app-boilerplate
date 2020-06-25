@@ -28,6 +28,7 @@ module.exports = {
     },
   },
   rules: {
+    'react/display-name': 0,
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/explicit-member-accessibility': [
       'error',
