@@ -42,6 +42,7 @@ export function LanguageSwitch() {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   ${FormLabel} {
     margin-bottom: 0;
   }
