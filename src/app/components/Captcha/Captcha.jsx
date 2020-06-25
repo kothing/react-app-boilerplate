@@ -2,62 +2,6 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import './style.css';
 
-// random num
-const randomNum = (min, max) => {
-  return Math.floor(Math.random() * (max - min) + min);
-};
-
-// random color
-const randomColor = (min, max) => {
-  return `rgb(${randomNum(min, max)}, ${randomNum(min, max)}, ${randomNum(min, max)})`;
-};
-
-// draw lines
-const drawLine = (ctx, color, startX, startY, endX, endY) => {
-  ctx.strokeStyle = color;
-  ctx.beginPath();
-  ctx.moveTo(startX, startY);
-  ctx.lineTo(endX, endY);
-  ctx.stroke();
-};
-
-// draw point
-const drawPoint = (ctx, color, x, y, r, sAngle, eAngle) => {
-  ctx.fillStyle = color;
-  ctx.beginPath();
-  ctx.arc(x, y, r, sAngle, eAngle);
-  ctx.fill();
-};
-
-// draw text
-const drawTxt = (ctx, length, txtArr, width, height) => {
-  let newCode = '';
-  for (let i = 1; i <= length; i += 1) {
-    const txt = txtArr[randomNum(0, txtArr.length)];
-    newCode += txt;
-    // random font size
-    // ctx.font = `${randomNum(height / 1.2, height)}px SimHei`;
-    ctx.font = `${randomNum(height / 1.2, height)}px serif`;
-    // random font color
-    ctx.fillStyle = randomColor(50, 160);
-    ctx.shadowOffsetX = randomNum(-3, 3);
-    ctx.shadowOffsetY = randomNum(-3, 3);
-    ctx.shadowBlur = randomNum(-3, 3);
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.3)';
-    const x = (width / (length + 1)) * i;
-    const y = height / 2;
-    const deg = randomNum(-30, 30);
-    // set translate deg ,origin of coordinates
-    ctx.translate(x, y);
-    ctx.rotate((deg * Math.PI) / 180);
-    ctx.fillText(txt, 0, 0);
-    // reset translate deg ,origin of coordinates
-    ctx.rotate((-deg * Math.PI) / 180);
-    ctx.translate(-x, -y);
-  }
-  return newCode;
-};
-
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);

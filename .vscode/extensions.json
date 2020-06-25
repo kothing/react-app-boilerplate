@@ -3,9 +3,6 @@
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "msjsdiag.debugger-for-chrome",
-    "mgmcdermott.vscode-language-babel",
-    "mikestead.dotenv",
-    "EditorConfig.EditorConfig",
-    "Orta.vscode-jest"
+    "vscode-icons-team.vscode-icons",
   ]
 }

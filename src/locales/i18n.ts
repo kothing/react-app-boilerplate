@@ -7,6 +7,11 @@ import en from './en/translation.json';
 import zh_CN from './zh_CN/translation.json';
 import { ConvertedToFunctionsType } from './types';
 
+export type TranslationResource = typeof en;
+export type LanguageKey = keyof TranslationResource;
+
+export const translations: ConvertedToFunctionsType<TranslationResource> = {} as any;
+
 const translationsJson = {
   en: {
     translation: en,
@@ -16,18 +21,13 @@ const translationsJson = {
   },
 };
 
-export type TranslationResource = typeof en;
-export type LanguageKey = keyof TranslationResource;
-
-export const translations: ConvertedToFunctionsType<TranslationResource> = {} as any;
-
 /*
  * Converts the static JSON file into object where keys are identical
  * but values are functions that produces the same key as string.
  * This is helpful when using the JSON file keys and still have the intellisense support
  * along with type-safety
  */
-function convertToFunctions(obj: any, dict: {}, current?: string) {
+function convertToFunctions(obj: any, dict: Record<string, unknown> | any, current?: string) {
   Object.keys(obj).forEach((key) => {
     const currentLookupKey = current ? `${current}.${key}` : key;
     if (typeof obj[key] === 'object') {

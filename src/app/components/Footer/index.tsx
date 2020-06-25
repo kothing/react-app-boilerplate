@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { StyleConstants } from 'styles/StyleConstants';
 import { PageWrapper } from 'app/components/PageWrapper';
 import { LanguageSwitch } from 'app/components/LanguageSwitch';

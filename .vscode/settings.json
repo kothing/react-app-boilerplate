@@ -1,10 +1,12 @@
 {
-  "editor.formatOnSave": true,
-  "eslint.format.enable": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+  "workbench.iconTheme": "vscode-icons",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
-  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "vsicons.projectDetection.autoReload": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -17,6 +19,4 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "jest.autoEnable": false,
-  "jest.runAllTestsFirst": false
 }

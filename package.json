@@ -1,77 +1,59 @@
 {
-  "name": "react-app-boilerplate",
+  "name": "create-react-typescript-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "5.1.1",
-    "@testing-library/react": "10.0.1",
-    "fontfaceobserver": "2.1.0",
+    "@types/classnames": "^2.2.10",
+    "@types/history": "^4.7.5",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.8",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-helmet": "^5.0.15",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/styled-components": "^5.1.0",
+    "classnames": "^2.2.6",
     "history": "4.10.1",
+    "husky": "^4.2.5",
     "i18next": "19.3.4",
     "i18next-browser-languagedetector": "4.0.2",
-    "node-plop": "0.25.0",
-    "plop": "2.6.0",
-    "prettier": "2.0.1",
-    "react": "16.13.0",
+    "lint-staged": "^10.2.11",
+    "react": "^16.13.1",
     "react-app-polyfill": "1.0.6",
-    "react-dom": "16.13.0",
+    "react-dom": "^16.13.1",
     "react-helmet-async": "1.0.4",
     "react-i18next": "11.3.4",
     "react-router-dom": "5.1.2",
     "react-scripts": "3.4.1",
     "react-test-renderer": "16.13.0",
     "sanitize.css": "11.0.0",
-    "shelljs": "0.8.3",
     "styled-components": "^5.1.1",
-    "typescript": "3.8.2"
+    "typescript": "~3.7.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/testing-library__jest-dom": "^5.0.2",
+    "@types/webpack-env": "^1.15.2",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
   },
   "scripts": {
-    "// --- DEVELOP ---": "",
     "start": "react-scripts start",
-    "// --- BUILDS ---": "",
     "build": "react-scripts build",
-    "// --- LOCAL SERVE ---": "",
-    "preserve": "npm run build",
-    "serve": "serve -s build",
-    "// --- BUNDLE ANALYZE ---": "",
-    "preanalyze": "npm run build",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "// --- RELEASING ---": "",
-    "release": "standard-version",
-    "// --- TESTING ---": "",
     "test": "react-scripts test",
-    "test:generators": "ts-node --project=./internals/ts-node.tsconfig.json ./internals/testing/test-generators.ts",
-    "// --- !!! DO NOT EJECT !!! ---": "",
     "eject": "react-scripts eject",
-    "// --- CODE STYLE ---": "",
-    "check-types": "tsc",
-    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx --fix .",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|ts|tsx)\"",
-    "format": "npm run prettier -- --write",
-    "check-format": "npm run prettier -- --list-different",
-    "validate": "npm-run-all --parallel check-types check-format lint serve",
-    "// --- GENERATORS ---": "",
-    "generate": "cross-env TS_NODE_PROJECT='./internals/ts-node.tsconfig.json' plop --plopfile internals/generators/plopfile.ts",
-    "// --- VERSION CONTROL ---": "",
-    "commit": "git-cz"
+    "lint": "eslint src --fix --ext .ts,.tsx"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run check-types && pretty-quick --staged && lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.+(js|jsx|ts|tsx)": [
-      "eslint --fix"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   },
   "browserslist": {
     "production": [
@@ -85,47 +67,14 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx,ts,tsx}",
-      "!src/**/*/*.d.ts",
-      "!src/**/*/Loadable.{js,jsx,ts,tsx}",
-      "!src/**/*/types.ts",
-      "!src/index.tsx",
-      "!src/serviceWorker.ts"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
-  "devDependencies": {
-    "@types/fontfaceobserver": "0.0.6",
-    "@types/history": "^4.7.5",
-    "@types/jest": "^25.1.4",
-    "@types/node": "^13.9.3",
-    "@types/react": "^16.9.25",
-    "@types/react-dom": "^16.9.3",
-    "@types/react-helmet": "^5.0.15",
-    "@types/react-router-dom": "^5.1.3",
-    "@types/react-test-renderer": "^16.9.2",
-    "@types/testing-library__jest-dom": "^5.0.2",
-    "@types/webpack-env": "^1.15.1",
-    "commitizen": "^4.1.2",
-    "cross-env": "^7.0.2",
-    "cz-conventional-changelog": "^3.2.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "npm-run-all": "^4.1.5",
-    "pretty-quick": "^2.0.1",
-    "serve": "^11.3.0",
-    "source-map-explorer": "^2.4.2",
-    "ts-node": "^8.8.2"
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,less,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
