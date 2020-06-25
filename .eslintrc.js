@@ -28,7 +28,7 @@ module.exports = {
     },
   },
   rules: {
-    'react/display-name': 0,
+    'react/display-name': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/explicit-member-accessibility': [
       'error',
@@ -44,6 +44,7 @@ module.exports = {
         allowTypedFunctionExpressions: true,
       },
     ],
+    '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
   },
 };
