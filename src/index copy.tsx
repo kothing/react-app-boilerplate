@@ -15,14 +15,35 @@ import { HelmetProvider } from 'react-helmet-async';
 import './locales/i18n';
 /* -------------------------------------------------------------------------- */
 
-ReactDOM.render(
+const MOUNT_NODE = document.getElementById('root') as HTMLElement;
+
+interface Props {
+  Component: typeof App;
+}
+
+const ConnectedApp = ({ Component }: Props) => (
   <HelmetProvider>
     <React.StrictMode>
-      <App />
+      <Component />
     </React.StrictMode>
-  </HelmetProvider>,
-  document.getElementById('root'),
+  </HelmetProvider>
 );
+
+const render = (Component: typeof App) => {
+  ReactDOM.render(<ConnectedApp Component={Component} />, MOUNT_NODE);
+};
+
+if (module.hot) {
+  // Hot reloadable translation json files and app
+  // modules.hot.accept does not accept dynamic dependencies,
+  // have to be constants at compile-time
+  module.hot.accept(['./app', './locales/i18n'], () => {
+    ReactDOM.unmountComponentAtNode(MOUNT_NODE);
+    import('./app').then((mod: any) => render(mod.default));
+  });
+}
+
+render(App);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
