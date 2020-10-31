@@ -17,7 +17,7 @@
 
 ## Project Goal
 
-I am a professional Frontend Developer based in Germany. My goal with this project is to create an advanced template for
+I am a professional Frontend Developer. My goal with this project is to create an advanced template for
 react applications. On the way I hope to learn as much as I can about **react** and the **typescript**/**javascript**
 ecosystem.
 
